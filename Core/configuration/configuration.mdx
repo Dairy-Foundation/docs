@@ -25,6 +25,7 @@ public class Settings implements Configurable {
 ```
 ```kt Kotlin
 object Settings : Configurable {
+	var teamNumber: Int = 0
 }
 ```
 </CodeGroup>
@@ -54,6 +55,13 @@ public class SettingsConfig implements Configuration<Settings> {
 }
 ```
 ```kt Kotlin
+object SettingsConfig : Configuration<Settings> {
+	override val configurableClass = Settings::class.java
+	override val prioritisedOver = emptyList<Configuration<in Settings>>()
+	override fun configure(configurable: Settings) {
+		configurable.teamNumber = 14349
+	}
+}
 ```
 </CodeGroup>
 
