@@ -10,7 +10,7 @@ code.
 
 <CodeGroup>
 ```java Java
-class FeatureOverview : Feature {
+public class FeatureOverview implements Feature {
 	{
 		// returns true if this is currently active
 		// true means it will receive updates for the current OpMode
@@ -18,7 +18,18 @@ class FeatureOverview : Feature {
 	}
 
 	// we won't look at the dependency system closely here
-	override var dependency: Dependency<*> = Dependency { opMode: Wrapper, resolvedFeatures: List<Feature>, yielding: Boolean -> }
+	private Dependency<?> dependency = (VoidDependency) (Wrapper opMode, List<? extends Feature> resolvedFeatures, boolean yielding) -> {};
+
+	@NonNull
+	@Override
+	public Dependency<?> getDependency() {
+		return dependency;
+	}
+
+	@Override
+	public void setDependency(@NonNull Dependency<?> dependency) {
+		this.dependency = dependency;
+	}
 
 	//
 	// Hooks
@@ -26,29 +37,40 @@ class FeatureOverview : Feature {
 
 	// By default, all the hooks are empty, so you only need to override the ones you want to use
 
-	override fun preUserInitHook(opMode: Wrapper) {}
+	@Override
+	public void preUserInitHook(Wrapper opMode) {}
 
-	override fun postUserInitHook(opMode: Wrapper) {}
+	@Override
+	public void postUserInitHook(Wrapper opMode) {}
 
-	override fun preUserInitLoopHook(opMode: Wrapper) {}
+	@Override
+	public void preUserInitLoopHook(Wrapper opMode) {}
 
-	override fun postUserInitLoopHook(opMode: Wrapper) {}
+	@Override
+	public void postUserInitLoopHook(Wrapper opMode) {}
 
-	override fun preUserStartHook(opMode: Wrapper) {}
+	@Override
+	public void preUserStartHook(Wrapper opMode) {}
 
-	override fun postUserStartHook(opMode: Wrapper) {}
+	@Override
+	public void postUserStartHook(Wrapper opMode) {}
 
-	override fun preUserLoopHook(opMode: Wrapper) {}
+	@Override
+	public void preUserLoopHook(Wrapper opMode) {}
 
-	override fun postUserLoopHook(opMode: Wrapper) {}
+	@Override
+	public void postUserLoopHook(Wrapper opMode) {}
 
-	override fun preUserStopHook(opMode: Wrapper) {}
+	@Override
+	public void preUserStopHook(Wrapper opMode) {}
 
-	override fun postUserStopHook(opMode: Wrapper) {}
+	@Override
+	public void postUserStopHook(Wrapper opMode) {}
 
 	// cleanup differs from postUserStopHook, it runs after the OpMode has completely stopped,
 	// and is guaranteed to run, even if the OpMode stopped from a crash.
-	override fun cleanup(opMode: Wrapper) {}
+	@Override
+	public void cleanup(Wrapper opMode) {}
 
 	{
 		// finally, lets look at some Feature related FeatureRegistrar methods
