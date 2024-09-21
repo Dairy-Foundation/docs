@@ -8,6 +8,20 @@ utilities provided by Core and other libraries.
 capable of doing a lot of powerful work and tasks in the background of user
 code.
 
+A hook is an update callback. Basically, when an event occurs in code, if that
+code is written to expose hooks, it will all all the hooks which are attached to
+that event.
+
+Dairy adds hooks to the OpMode life cycle, which means that when your OpMode
+code runs (`init`, `init_loop`, `start`, `loop`, `stop`), Dairy makes it so that
+other Objects in code receive updates about these events occurring, without any
+added code for you.
+
+<Note>
+If you are using OpMode, you don't need to add any code, if you are using
+LinearOpMode, then additional lines of code to enable the hooks MUST be added.
+</Note>
+
 <CodeGroup>
 ```java Java
 public class FeatureOverview implements Feature {
