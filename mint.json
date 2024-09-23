@@ -38,6 +38,14 @@
 		{
 			"name": "Core",
 			"url": "Core"
+		},
+		{
+			"name": "Pasteurized",
+			"url": "Pasteurized"
+		},
+		{
+			"name": "Mercurial",
+			"url": "Mercurial"
 		}
 	],
 	"anchors": [
@@ -167,9 +175,46 @@
 			"pages": [
 				"Core/testing/unit_testing_opmodes"
 			]
+		},
+		{
+			"group": "Pasteurized",
+			"pages": [
+				"Pasteurized/overview",
+				"Pasteurized/usage"
+			]
+		},
+		{
+			"group": "Mercurial",
+			"pages": [
+				"Mercurial/overview",
+				"Mercurial/theory",
+				"Mercurial/usage"
+			]
+		},
+		{
+			"group": "Commands",
+			"pages": [
+				"Mercurial/commands/overview",
+				"Mercurial/commands/lambda",
+				"Mercurial/commands/names_and_errors",
+				"Mercurial/commands/groups_and_utilities"
+			]
+		},
+		{
+			"group": "Subsystems",
+			"pages": [
+				"Mercurial/subsystems/subsystems"
+			]
+		},
+		{
+			"group": "Bindings and Gamepads",
+			"pages": [
+				"Mercurial/bindings_and_gamepads/bindings",
+				"Mercurial/bindings_and_gamepads/gamepads"
+			]
 		}
 	],
 	"footerSocials": {
-		"github": "https://github.com/Dairy-Foundation"
+		"github": "https://github.com/Dairy-Foundation/docs"
 	}
 }
