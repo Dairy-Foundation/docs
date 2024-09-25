@@ -52,7 +52,7 @@ val c2 = RefCell("")
 // and c1 will now receive updates about changes to c2
 // c1 will bind c2 first
 // so c1 will update c2 first
-c1.bind(c2)
+c1.bindBoth(c2)
 // now c2 will contain "start"
 c1.accept("end")
 // now c2 will contain "end"
