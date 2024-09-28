@@ -115,31 +115,20 @@ abstract class Template : OpMode() {
 Using it:
 <CodeGroup>
 ```java Java
-// lets add that BulkRead feature from Writing + Using Features
-@BulkReads.Attach
-abstract class Template : OpMode() {
-	// lets add OpModeLazyCells for each hardware item
-	private val leftFront by OpModeLazyCell {
-		hardwareMap.get(
-			DcMotorEx::class.java, "lf"
-		)
+// we don't need to add the @BulkReads.Attach annotation
+public class Usage extends Template {
+	@Override
+	public void init() {
 	}
-	private val leftBack by OpModeLazyCell {
-		hardwareMap.get(
-			DcMotorEx::class.java, "lb"
-		)
-	}
-
-	// right motors need some additional setup
-	private val rightBack by OpModeLazyCell {
-		val m = hardwareMap.get(DcMotorEx::class.java, "rb")
-		m.direction = DcMotorSimple.Direction.REVERSE
-		m
-	}
-	private val rightFront by OpModeLazyCell {
-		val m = hardwareMap.get(DcMotorEx::class.java, "rf")
-		m.direction = DcMotorSimple.Direction.REVERSE
-		m
+	@Override
+	public void loop() {
+		// and we can access the methods from the Template
+		// thanks to OpModeLazyCell, the motors will be initialised in init
+		// rather than impact our first loop later
+		getLeftFront().setPower(-gamepad1.left_stick_y);
+		getLeftBack().setPower(-gamepad1.left_stick_y);
+		getRightBack().setPower(-gamepad1.left_stick_y);
+		getRightFront().setPower(-gamepad1.left_stick_y);
 	}
 }
 ```
