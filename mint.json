@@ -75,6 +75,7 @@
 			"group": "Get Started",
 			"pages": [
 				"introduction",
+				"reading_guide",
 				"installation",
 				"contributing",
 				"future"
