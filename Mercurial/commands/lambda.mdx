@@ -99,6 +99,16 @@ lambda
 	.setRequirements(Mercurial, /*varargs requirements*/)
 	// you could also pass a Set of OpModeStates instead of varargs
 	.setRunStates(Wrapper.OpModeState.INIT, Wrapper.OpModeState.ACTIVE)
+
+statefulLambda
+	// stateful lambda adds equivalent methods that also get state as a parameter
+	.setExecute { stateRef ->
+		stateRef.accept("new state");
+	}
+	.setEnd { interrupted, stateRef ->
+		if (interrupted) stateRef.accept("interrupted");
+		else stateRef.accept("not interrupted");
+	}
 ```
 </CodeGroup>
 
