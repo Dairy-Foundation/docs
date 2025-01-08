@@ -68,7 +68,12 @@
 			"name": "GitHub",
 			"icon": "github",
 			"url": "https://github.com/Dairy-Foundation/"
+		}, 
+		{ 
+			"name": "User Samples",
+			"url": 	"user_samples"
 		}
+
 	],
 	"navigation": [
 		{
@@ -79,7 +84,6 @@
 				"installation",
 				"contributing",
 				"future",
-				"user_samples"
 			]
 		},
 		{
