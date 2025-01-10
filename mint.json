@@ -69,13 +69,11 @@
 			"icon": "github",
 			"url": "https://github.com/Dairy-Foundation/"
 		},
-        {
-            "name": "User Samples",
-            "icon": "github",
-            "url": "Samples"
-        }
-        
-
+		{
+			"name": "User Samples",
+			"icon": "code",
+			"url": "Samples"
+		}
 	],
 	"navigation": [
 		{
