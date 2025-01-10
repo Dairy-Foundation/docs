@@ -68,7 +68,14 @@
 			"name": "GitHub",
 			"icon": "github",
 			"url": "https://github.com/Dairy-Foundation/"
-		}
+		},
+        {
+            "name": "User Samples",
+            "icon": "github",
+            "url": "Samples"
+        }
+        
+
 	],
 	"navigation": [
 		{
@@ -78,8 +85,7 @@
 				"reading_guide",
 				"installation",
 				"contributing",
-				"future",
-				"user_samples"
+				"future"
 			]
 		},
 		{
@@ -213,6 +219,12 @@
 			"pages": [
 				"Mercurial/bindings_and_gamepads/bindings",
 				"Mercurial/bindings_and_gamepads/gamepads"
+			]
+		},
+        {
+			"group": "Samples",
+			"pages": [
+				"Samples/user_samples"
 			]
 		}
 	],
