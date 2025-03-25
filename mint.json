@@ -125,6 +125,12 @@
 			]
 		},
 		{
+			"group": "Sloth Load",
+			"pages": [
+				"Sinister/SlothLoad"
+			]
+		},
+		{
 			"group": "AppHooks",
 			"pages": [
 				"Sinister/apphooks/apphooks"
@@ -230,3 +236,4 @@
 		"github": "https://github.com/Dairy-Foundation/docs"
 	}
 }
+
